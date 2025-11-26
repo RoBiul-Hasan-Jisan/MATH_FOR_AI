@@ -1,0 +1,219 @@
+A random variable is a function that assigns numerical values to the outcomes of a random experiment. It provides a quantitative description of random phenomena.
+
+Formal Definition
+A random variable X is a function:
+X: S → ℝ
+where S is the sample space and ℝ is the set of real numbers.
+
+Types of Random Variables
+1. Discrete Random Variables
+Takes on countable values (finite or infinite)
+
+Examples: Number of heads, dice rolls, number of students
+
+2. Continuous Random Variables
+Takes on uncountable values in an interval
+
+Examples: Height, weight, time, temperature
+
+Discrete Random Variables
+Probability Mass Function (PMF)
+For a discrete random variable X, the PMF is:
+p(x) = P(X = x)
+
+Properties:
+
+0 ≤ p(x) ≤ 1 for all x
+
+∑ p(x) = 1 (sum over all possible x)
+
+Cumulative Distribution Function (CDF)
+F(x) = P(X ≤ x) = ∑ p(t) for t ≤ x
+
+Examples of Discrete Random Variables
+Example 1: Coin Flips
+Let X = number of heads in 3 coin flips
+
+Sample Space: {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}
+
+PMF:
+
+P(X = 0) = P(TTT) = 1/8
+
+P(X = 1) = P(HTT, THT, TTH) = 3/8
+
+P(X = 2) = P(HHT, HTH, THH) = 3/8
+
+P(X = 3) = P(HHH) = 1/8
+
+CDF:
+
+F(0) = P(X ≤ 0) = 1/8
+
+F(1) = P(X ≤ 1) = 1/8 + 3/8 = 4/8 = 1/2
+
+F(2) = P(X ≤ 2) = 1/8 + 3/8 + 3/8 = 7/8
+
+F(3) = P(X ≤ 3) = 1
+
+Example 2: Dice Sum
+Let X = sum of two dice
+
+PMF (partial):
+
+P(X = 2) = 1/36
+
+P(X = 3) = 2/36
+
+P(X = 4) = 3/36
+
+...
+
+P(X = 7) = 6/36
+
+...
+
+P(X = 12) = 1/36
+
+Continuous Random Variables
+Probability Density Function (PDF)
+For a continuous random variable X, the PDF f(x) satisfies:
+
+f(x) ≥ 0 for all x
+
+∫ f(x) dx = 1 (over all real numbers)
+
+Important: P(X = x) = 0 for any specific x
+We calculate probabilities over intervals:
+P(a ≤ X ≤ b) = ∫ f(x) dx from a to b
+
+Cumulative Distribution Function (CDF)
+F(x) = P(X ≤ x) = ∫ f(t) dt from -∞ to x
+
+Relationship: f(x) = dF(x)/dx
+
+Examples of Continuous Random Variables
+Example 3: Uniform Distribution
+X ~ Uniform(a, b)
+PDF: f(x) = 1/(b-a) for a ≤ x ≤ b, 0 otherwise
+
+Example: Bus arrives every 10 minutes uniformly
+
+P(wait ≤ 3 minutes) = 3/10 = 0.3
+
+P(4 ≤ wait ≤ 7) = (7-4)/10 = 0.3
+
+Example 4: Exponential Distribution
+Models time between events
+PDF: f(x) = λe^(-λx) for x ≥ 0
+
+Example: Customer arrivals with rate λ = 2 per hour
+
+P(time between arrivals > 0.5 hours) = e^(-2×0.5) = e^(-1) ≈ 0.368
+
+Expected Value (Mean)
+Discrete Case:
+E[X] = μ = ∑ x × p(x)
+
+Continuous Case:
+E[X] = μ = ∫ x × f(x) dx
+
+Examples:
+Die Roll: E[X] = 1×(1/6) + 2×(1/6) + ... + 6×(1/6) = 3.5
+
+Coin Flips (3 flips):
+E[X] = 0×(1/8) + 1×(3/8) + 2×(3/8) + 3×(1/8) = 1.5
+
+Variance
+Measures spread or dispersion around the mean
+
+Var(X) = E[(X - μ)²] = E[X²] - (E[X])²
+
+Discrete Case:
+Var(X) = ∑ (x - μ)² × p(x)
+
+Continuous Case:
+Var(X) = ∫ (x - μ)² × f(x) dx
+
+Examples:
+Die Roll:
+
+E[X] = 3.5
+
+E[X²] = 1²×(1/6) + 2²×(1/6) + ... + 6²×(1/6) = 91/6 ≈ 15.167
+
+Var(X) = 15.167 - (3.5)² = 15.167 - 12.25 = 2.917
+
+Important Discrete Distributions
+1. Bernoulli Distribution
+Single trial with success probability p
+
+X = 1 (success) with probability p, X = 0 (failure) with probability 1-p
+
+E[X] = p, Var(X) = p(1-p)
+
+2. Binomial Distribution
+Number of successes in n independent Bernoulli trials
+
+PMF: P(X = k) = C(n,k) × p^k × (1-p)^(n-k)
+
+E[X] = np, Var(X) = np(1-p)
+
+Example: Probability of exactly 7 heads in 10 coin flips
+
+P(X = 7) = C(10,7) × (0.5)^7 × (0.5)^3 = 120 × (1/128) = 15/128 ≈ 0.117
+
+3. Poisson Distribution
+Number of events in fixed interval of time/space
+
+PMF: P(X = k) = (λ^k × e^(-λ)) / k!
+
+E[X] = λ, Var(X) = λ
+
+Example: Calls arrive at rate 5 per hour
+
+P(exactly 3 calls in next hour) = (5³ × e^(-5)) / 3! ≈ 0.140
+
+Important Continuous Distributions
+1. Normal Distribution (Gaussian)
+PDF: f(x) = (1/(σ√(2π))) × e^(-(x-μ)²/(2σ²))
+
+Bell-shaped curve
+
+68-95-99.7 rule
+
+2. Exponential Distribution
+PDF: f(x) = λe^(-λx) for x ≥ 0
+
+Memoryless property
+
+3. Uniform Distribution
+PDF: f(x) = 1/(b-a) for a ≤ x ≤ b
+
+Transformations of Random Variables
+If Y = g(X), then:
+
+Discrete: P(Y = y) = ∑ P(X = x) for all x such that g(x) = y
+
+Continuous: Use CDF method or transformation formulas
+
+Example: If X ~ Uniform(0,1) and Y = 2X + 3
+
+Then Y ~ Uniform(3, 5)
+
+Practice Problems
+Let X = number of 6's in 4 dice rolls. Find PMF and E[X].
+
+Binomial with n=4, p=1/6
+
+E[X] = 4 × (1/6) = 2/3
+
+The time (in hours) until a light bulb burns out follows exponential distribution with mean 1000 hours. Find probability it lasts more than 1500 hours.
+
+λ = 1/1000
+
+P(X > 1500) = e^(-1500/1000) = e^(-1.5) ≈ 0.223
+
+Let Z ~ N(0,1). Find P(-1 ≤ Z ≤ 1).
+
+Using 68-95-99.7 rule: ≈ 0.6827

@@ -1,0 +1,125 @@
+What is a Joint Event?
+A joint event is an event that is defined by the intersection of two or more simple events. We use the notation:
+
+P(A ∩ B) = Probability that both A and B occur
+
+Read as "Probability of A and B"
+
+Key Concepts
+1. The Multiplication Rule
+For any two events A and B:
+P(A ∩ B) = P(A) × P(B|A)
+
+Where:
+
+P(B|A) = Probability of B given that A has occurred (conditional probability)
+
+2. Special Case: Independent Events
+Two events are independent if the occurrence of one does not affect the probability of the other.
+
+For independent events:
+P(A ∩ B) = P(A) × P(B)
+
+Examples with Coins, Dice, and Cards
+Coin Examples
+Example 1: Two independent coin flips
+
+Event A: First flip is Heads
+
+Event B: Second flip is Tails
+
+P(A ∩ B) = P(Heads) × P(Tails) = (1/2) × (1/2) = 1/4
+
+Example 2: Three specific outcomes
+
+What's P(Heads on 1st AND Heads on 2nd AND Tails on 3rd)?
+
+P = (1/2) × (1/2) × (1/2) = 1/8
+
+Dice Examples
+Example 3: Rolling two dice
+
+Event A: Die 1 shows 4
+
+Event B: Die 2 shows 2
+
+P(A ∩ B) = (1/6) × (1/6) = 1/36
+
+Example 4: Dependent dice scenario
+
+Roll one die twice
+
+Event A: First roll > 4 (outcomes: 5, 6)
+
+Event B: Second roll < First roll
+
+This is dependent because Event B depends on what happened in Event A
+
+We need conditional probability: P(A ∩ B) = P(A) × P(B|A)
+
+Card Examples
+Example 5: Drawing two cards without replacement
+
+Event A: First card is a Heart
+
+Event B: Second card is a Heart
+
+P(A) = 13/52 = 1/4
+
+P(B|A) = 12/51 (one Heart already removed)
+
+P(A ∩ B) = (13/52) × (12/51) = 156/2652 ≈ 0.0588
+
+Example 6: Specific card combination
+
+Event A: Card is a King
+
+Event B: Card is a Spade
+
+P(A ∩ B) = P(King of Spades) = 1/52
+
+Important Distinctions
+Independent vs. Dependent Events
+Independent:
+
+Coin flips
+
+Dice rolls
+
+With replacement scenarios
+
+Dependent:
+
+Drawing cards without replacement
+
+Real-world scenarios where one event affects another
+
+Joint Probability vs. Other Probabilities
+P(A ∩ B): Both A and B occur
+
+P(A ∪ B): Either A or B or both occur
+
+P(A|B): A occurs given that B has occurred
+
+Special Formulas
+For Mutually Exclusive Events (cannot happen together):
+P(A ∩ B) = 0
+
+For Independent Events:
+P(A ∩ B) = P(A) × P(B)
+
+General Multiplication Rule:
+P(A ∩ B) = P(A) × P(B|A) = P(B) × P(A|B)
+
+Practice Problems
+What's the probability of rolling a 3 on a die AND flipping Heads on a coin?
+
+P = (1/6) × (1/2) = 1/12
+
+Draw two cards from a deck (without replacement). What's P(First is Ace AND Second is King)?
+
+P = (4/52) × (4/51) = 16/2652 ≈ 0.00603
+
+Flip a coin 4 times. What's P(All four are Tails)?
+
+P = (1/2)^4 = 1/16
