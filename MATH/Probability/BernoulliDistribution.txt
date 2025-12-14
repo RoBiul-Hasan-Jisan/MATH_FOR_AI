@@ -1,0 +1,198 @@
+The Bernoulli Distribution is the simplest discrete probability distribution, representing a single trial with exactly two possible outcomes. It's the building block for many other distributions like the Binomial.
+
+Definition and Characteristics
+A Bernoulli trial is a random experiment with:
+
+Exactly two possible outcomes: "success" and "failure"
+
+Probability of success = p
+
+Probability of failure = 1 - p
+
+The Bernoulli random variable X is defined as:
+
+X = 1 if success occurs
+
+X = 0 if failure occurs
+
+Probability Mass Function (PMF)
+The PMF of a Bernoulli random variable is:
+
+P(X = x) =
+\begin{cases}
+p & \text{if } x = 1 \
+1-p & \text{if } x = 0
+\end{cases}$
+
+This can also be written compactly as:
+P(X = x) = p^x × (1-p)^{1-x} for x = 0, 1
+
+Parameters
+The Bernoulli distribution has only one parameter:
+
+p = probability of success (0 ≤ p ≤ 1)
+
+Notation: X ~ Bernoulli(p)
+
+Examples of Bernoulli Trials
+Coin-Related Examples:
+Flipping a coin (Heads = success, Tails = failure)
+
+Checking if a coin lands on its edge (very rare!)
+
+Quality Control:
+Testing if an item is defective
+
+Checking if a product meets specifications
+
+Medical:
+Testing if a patient has a certain disease
+
+Checking if a treatment is effective for a single patient
+
+Everyday Life:
+Whether it rains today
+
+Whether your favorite team wins
+
+Whether you pass a test
+
+Detailed Examples
+Example 1: Fair Coin Flip
+Let X = 1 if Heads, X = 0 if Tails
+
+p = 0.5
+
+PMF: P(X=1) = 0.5, P(X=0) = 0.5
+
+Example 2: Biased Coin
+Coin weighted so P(Heads) = 0.7
+
+p = 0.7
+
+PMF: P(X=1) = 0.7, P(X=0) = 0.3
+
+Example 3: Quality Control
+10% of items from a production line are defective
+Randomly select one item: X = 1 if defective, X = 0 if good
+
+p = 0.1
+
+PMF: P(X=1) = 0.1, P(X=0) = 0.9
+
+Example 4: Medical Test
+A disease affects 2% of population
+Test one person: X = 1 if diseased, X = 0 if healthy
+
+p = 0.02
+
+PMF: P(X=1) = 0.02, P(X=0) = 0.98
+
+Mean and Variance
+Expected Value (Mean)
+E[X] = p
+
+Proof:
+E[X] = ∑ x × P(X=x) = (1 × p) + (0 × (1-p)) = p
+
+Variance
+Var(X) = p(1-p)
+
+Proof:
+First, E[X²] = (1² × p) + (0² × (1-p)) = p
+Then Var(X) = E[X²] - (E[X])² = p - p² = p(1-p)
+
+Standard Deviation
+σ = √[p(1-p)]
+
+Examples of Mean and Variance
+Example 1: Fair Coin (p = 0.5)
+E[X] = 0.5
+
+Var(X) = 0.5 × 0.5 = 0.25
+
+σ = √0.25 = 0.5
+
+Example 2: Biased Coin (p = 0.7)
+E[X] = 0.7
+
+Var(X) = 0.7 × 0.3 = 0.21
+
+σ = √0.21 ≈ 0.458
+
+Example 3: Rare Event (p = 0.02)
+E[X] = 0.02
+
+Var(X) = 0.02 × 0.98 = 0.0196
+
+σ = √0.0196 = 0.14
+
+Properties and Characteristics
+Shape of Distribution:
+When p = 0.5: Symmetric
+
+When p ≠ 0.5: Skewed toward the more likely outcome
+
+Maximum variance occurs at p = 0.5
+
+Minimum variance (0) occurs at p = 0 or p = 1
+
+Moment Generating Function:
+M(t) = E[e^{tX}] = (1-p) + pe^t
+
+Relationship to Other Distributions
+Bernoulli → Binomial:
+If we conduct n independent Bernoulli trials, the total number of successes follows a Binomial(n,p) distribution.
+
+Bernoulli → Geometric:
+The number of Bernoulli trials needed to get the first success follows a Geometric(p) distribution.
+
+Bernoulli → Negative Binomial:
+The number of Bernoulli trials needed to get r successes follows a Negative Binomial(r,p) distribution.
+
+Probability Mass Function:
+text
+p(X=1) = p    [XXXXXXX...] any
+p(X=0) = 1-p  [XXXXXXXX...] any 
+For p = 0.3:
+Bar at x=0: height = 0.7
+
+Bar at x=1: height = 0.3
+
+For p = 0.8:
+Bar at x=0: height = 0.2
+
+Bar at x=1: height = 0.8
+
+Practice Problems
+A student has 80% chance of passing an exam. Let X=1 if pass, X=0 if fail.
+
+p = 0.8
+
+E[X] = 0.8
+
+Var(X) = 0.8 × 0.2 = 0.16
+
+In a lottery, your chance of winning is 1 in 1,000,000. Let X=1 if win.
+
+p = 0.000001
+
+E[X] = 0.000001
+
+Var(X) = 0.000001 × 0.999999 ≈ 0.000001
+
+A fair die is rolled. Success = rolling a 6. Find Bernoulli parameters.
+
+p = 1/6 ≈ 0.1667
+
+E[X] = 1/6
+
+Var(X) = (1/6) × (5/6) = 5/36 ≈ 0.1389
+
+For what value of p is the variance maximized?
+
+Var(X) = p(1-p) is a quadratic function
+
+Maximum at p = 0.5
+
+Maximum variance = 0.25
